@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "poag5", "poag5\poag5.vcproj", "{15D90896-23A8-4A7F-B295-9CD2BB5118DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15D90896-23A8-4A7F-B295-9CD2BB5118DB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15D90896-23A8-4A7F-B295-9CD2BB5118DB}.Debug|Win32.Build.0 = Debug|Win32
+		{15D90896-23A8-4A7F-B295-9CD2BB5118DB}.Release|Win32.ActiveCfg = Release|Win32
+		{15D90896-23A8-4A7F-B295-9CD2BB5118DB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

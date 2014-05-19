@@ -1,0 +1,171 @@
+\newcommand\COURSENAME{Discrete Math 2}
+\newcommand\COURSESHORTNAME{Discrete Math 2}
+\newcommand\COURSENUMBER{MATH325}
+\newcommand\TITLE{Assignment 9}
+\newcommand\AUTHOR{Dr Yihsiang Liow}
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{assignment}
+\definecolor{red}{rgb}{1,0,0}
+\newcommand\redtext[1]{\textcolor{red}{#1}}
+\begin{document}
+\topmatter
+
+This assignment involves converting rational functions to 
+power series and partial fractions.
+
+The two most important formulas for converting rational functions to 
+power series are
+\[
+\frac{1}{1-x} = \sum_{n=0}^\infty x^n
+\]
+and
+\[
+\left(
+\frac{1}{1-x}
+\right)^k
+= \sum_{n=0}^\infty \binom{k+n-1}{n} x^n
+\]
+(Well ... actually the second formula include the first ... $k=1$ in
+the second gives you the first.)
+In order to use both, remember that $x$ is a variable.
+For instance you can think of the first formula as:
+\[
+\frac{1}{1- \operatorname{BLAH}} = \sum_{n=0}^\infty \operatorname{BLAH}^n
+\]
+So for instance this is also true
+\[
+\frac{1}{1- 12345x} 
+= \sum_{n=0}^\infty (12345x)^n
+= \sum_{n=0}^\infty 12345^n x^n
+\]
+Remember that if you want to test the equality above
+with a specific value for $x$, you can only use a 
+value for $x$ such that $|12345x| < 1$, i.e., $|x| < 1/12345$.
+If you go outside this range, the power series will very likely blow up 
+in your face.
+Also,
+\[
+\left(
+\frac{1}{1-123x^{567}}
+\right)^{999}
+= \sum_{n=0}^\infty \binom{999+n-1}{n} (123x^{567})^n
+= \sum_{n=0}^\infty \binom{999+n-1}{n} 123^n x^{567n}
+\]
+
+Note however that the two 1's must be 1's:
+\[
+\frac{\underline{1}}{\underline{1}-x} = \sum_{n=0}^\infty x^n
+\]
+As shown in class if they are not 1's, then you just ... well ... make them 1:
+\[
+\frac{111}{222-333x} 
+= 111 \frac{1}{222-333x} 
+= \frac{111}{222} \frac{1}{1 -333x/222} 
+\]
+
+In questions where you are asked to read a coefficient, if the value is too
+big, you can simply tidy up the expression and leave it as it is, i.e.,
+you need not evaluate the expression to get a value. 
+You can leave huge powers, binomial coefficients, etc.~alone.
+
+
+\newpage
+Q1. (a) Rewrite
+\[
+\frac{1}{1 - 2x}
+\]
+as a power series. 
+
+(b) What is the coefficient of $x^{1000}$?
+
+\SOLUTION
+
+\input{q01.tex}
+\newpage
+
+
+
+
+Q2.
+(a) Rewrite
+\[
+\frac{1}{5x - 3}
+\]
+as a power series. 
+
+[HINT: Remember to make the above like $\frac{1}{1 - \operatorname{BLAH}}$.]
+
+(b) What is the coefficient of $x^{1000}$?
+
+\SOLUTION
+
+\input{q02.tex}
+\newpage
+
+
+Q3.
+(a) Rewrite
+\[
+\left( 
+\frac{1}{2x - 3}
+\right)^5
+\]
+as a power series. 
+
+
+(b) What is the coefficient of $x^{3}$?
+
+\SOLUTION
+
+
+\input{q03.tex}
+\newpage
+
+
+
+
+Q4.
+(a) Rewrite
+\[
+\biggl( 
+\frac{1}{1 - 4x^2}
+\biggr)^5
+\]
+as a power series. 
+
+(b) What is the coefficient of $x^{1000}$?
+
+(c) What is the coefficient of $x^{1001}$?
+
+
+\SOLUTION
+
+\input{q04.tex}
+\newpage
+
+
+
+
+Q5.
+(a) Solve for $A$ and $B$ where
+\[
+\frac{1}{(1 - 2x)(3x - 1)} = \frac{A}{1 - 2x} + \frac{B}{3x - 1}
+\]
+
+(b) Rewrite 
+\[
+f(x) = \frac{1}{(1 - 2x)(3x - 1)} 
+\]
+as a power series.
+
+(c) What is the coefficient of $x^{1000}$ of $f(x)$?
+
+\SOLUTION
+
+\input{q05.tex}
+
+
+
+
+\end{document}

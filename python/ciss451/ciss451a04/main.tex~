@@ -1,0 +1,405 @@
+\newcommand\COURSENAME{Cryptography and Computer Security}
+\newcommand\COURSESHORTNAME{Cryptography}
+\newcommand\COURSENUMBER{CISS451/MATH451}
+\newcommand\TITLE{Assignment 4}
+\newcommand\AUTHOR{Dr Yihsiang Liow}
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{assignment}
+\definecolor{red}{rgb}{1,0,0}
+\newcommand\redtext[1]{\textcolor{red}{#1}}
+\begin{document}
+\topmatter
+
+This is an assignment on the congruence notation.
+
+\newpage
+
+Here are some facts about $(\Z, +, \cdot, 0, 1)$.
+In the following $x,y,z$ are integers, i.e. $x,y,z \in \Z$.
+
+\newcommand\LISTMARGIN{1in}
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[RING1:] $x,y \in \Z$ can be replaced by $x+y \in \Z$
+\item[RING2:] $(x + y) + z$ can be replaced by $x + (y + z)$
+\item[RING3:] $x + (y + z)$ can be replaced by $(x + y) + z$
+\item[RING4:] $x + 0$ can be replaced by $x$
+\item[RING5:] $x$ can be replaced by $x + 0$
+\item[RING6:] $0 + x$ can be replaced by $x$
+\item[RING7:] $x$ can be replaced by $0 + x$
+\item[RING8:] There is some $-x \in \Z$ 
+              such that $x + (-x)$ can be replaced by 0.
+\item[RING8B:] There is some $-x \in \Z$ 
+              such that 0 can be replaced by $x + (-x)$.
+\item[RING9:] There is some $-x \in \Z$ 
+              such that $(-x) + x$ can be replaced by 0.
+\item[RING9B:] There is some $-x \in \Z$ 
+              such that $0$ can be replaced by $(-x) + x$.
+\item[RING10:] $x+y$ can be replaced by $y + x$.
+\item[RING11:] $x, y \in \Z$ can be replaced by $xy \in \Z$
+\item[RING12:] $(xy)z$ can be replaced by $x(yz)$
+\item[RING13:] $x(yz)$ can be replaced by $(xy)z$
+\item[RING14:] $x1$ can be replaced by $x$
+\item[RING15:] $x$ can be replaced by $x1$
+\item[RING16:] $1x$ can be replaced by $x$
+\item[RING17:] $x$ can be replaced by $1x$
+\item[RING18:] $x(y + z)$ can be replaced by $xy + xz$
+\item[RING19:] $xy + xz$ can be replaced by $x(y + z)$
+\item[RING20:] $(y+z)x$ can be replaced $yx + zx$
+\item[RING21:] $yx+zx$ can be replaced $(y + z)x$
+\item[RING22:] $xy$ can be replaced by $yx$
+\item[RING23:] $xy=0$ can be replaced by [$x=0$ or $y=0$].
+\end{enumerate}
+
+The following are a notational rewrite rules for subtraction
+(i.e. the following are definitions and not axioms):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[RING24:] $x - y$ can be replaced by $x + (-y)$
+\item[RING25:] $x + (-y)$ can be replaced by $x - y$
+\end{enumerate}
+
+The following are from Theorems 1 and 2 proven in Assignment 1 (i.e.
+$0x = 0 = x0$)
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH1A:] $0x$ can be replaced by $0$
+\item[TH1B:] $0$ can be replaced by $0x$
+\item[TH1C:] $0$ can be replaced by $x0$
+\item[TH1D:] $x0$ can be replaced by $0$
+\item[TH1E:] $0x$ can be replaced by $x0$
+\item[TH1F:] $x0$ can be replaced by $0x$
+\end{enumerate}
+
+Here are some facts from Theorem 3 (i.e. $x+y = 0 \implies y = -x$ and
+$y + x \implies y=-x$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH3A:] If $x+y=0$, then $y$ can be rewritten as $-x$.
+\item[TH3B:] If $x+y=0$, then $-x$ can be rewritten as $y$.
+\item[TH3C:] If $y+x=0$, then $y$ can be rewritten as $-x$.
+\item[TH3D:] If $y+x=0$, then $-x$ can be rewritten as $y$.
+\end{enumerate}
+
+Here are some facts from Theorem 4 from Assignment 1:
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH4A:] $-(-x)$ can be rewritten as $x$.
+\item[TH4B:] $x$ can be rewritten as $-(-x)$.
+\end{enumerate}
+
+Here's Theorem 5 from Assignment 2 (i.e. $-1 \cdot x = -x = x \cdot (-1)$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH5A:] $-1 \cdot x$ can be replaced by $-x$
+\item[TH5B:] $-x$ can be replaced by $-1 \cdot x$
+\item[TH5C:] $-x$ can be replaced by $x \cdot (-1)$
+\item[TH5D:] $x \cdot (-1)$ can be replaced by $-x$ 
+\end{enumerate}
+
+Here's Theorem 6 from Assignment 2 (i.e. $(-y)x = -(yx) = y(-x)$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH6A:] $(-y)x$ can be replaced by $-(yx)$
+\item[TH6B:] $-(yx)$ can be replaced by $(-y)x$
+\item[TH6C:] $-(yx)$ can be replaced by $y(-x)$
+\item[TH6D:] $y(-x)$ can be replaced by $-(yx)$
+\item[TH6E:] $(-y)x$ can be replaced by $y(-x)$
+\item[TH6F:] $y(-x)$ can be replaced by $(-y)x$ 
+\end{enumerate}
+
+Here's Theorem 7 from Assignment 2 (i.e. $(-x)(-y) = xy$ and $(-1)(-1)=1$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH7A:] $(-x)(-y)$ can be replaced by $xy$
+\item[TH7B:] $xy$ can be replaced by $(-x)(-y)$
+\item[TH7C:] $(-1)(-1)$ can be replaced by $1$
+\item[TH7D:] $1$ can be replaced by $(-1)(-1)$
+\end{enumerate}
+
+Here's Theorem 8 ($0 = -0$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH8A:] $0$ can be replaced by $-0$
+\item[TH8B:] $-0$ can be replaced by $0$
+\end{enumerate}
+
+Here's Theorem 9 (the additive cancellation property):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH9A:] If $a + x = a + y$, then $x$ can be replaced by $y$.
+\item[TH9B:] If $x + a = y + a$, then $x$ can be replaced by $y$.
+\end{enumerate}
+
+Here's Theorem 10 (the multiplicative cancellation property):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH9A:] If $ax = ay, a \neq 0$, then $x$ can be replaced by $y$.
+\item[TH9B:] If $xa = ya, a \neq 0$, then $x$ can be replaced by $y$.
+\end{enumerate}
+
+\newpage
+
+Now for stuff on divisibility.
+
+Here are the "rewrite rules'' for the definition of "divisibility'':
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[DIV1:] $d \mid a$ can be replaced by [$dx = a$ for some $x \in \Z$]
+\item[DIV2:] [$dx = a$ for some $x \in \Z$] can be replaced by $d \mid a$ 
+\end{enumerate}
+which are really the same as:
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[DIV1:] $d \mid a$ can be replaced by [$\exists x \in \Z (dx = a)$]
+\item[DIV2:] [$\exists x \in \Z (dx = a)]$ can be replaced by $d \mid a$ 
+\end{enumerate}
+
+Here's Theorem 12:
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[THM11:]$1 \mid n$.
+\item[THM12A:] $a \mid a$. 
+\item[THM12B:] If $a \mid b$ and $b \mid c$, then $a \mid c$. 
+\end{enumerate}
+
+Here's Theorem 13 (a whole mouthful of it ...)
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[THM13A:]$1 \mid a$.
+\item[THM13B:]$-1 \mid a$.
+\item[THM13C:] If $d \mid a$, then $-d \mid a$
+\item[THM13D:] If $d \mid a$, then $d \mid ax$
+\item[THM13E:] If $d \mid a$ and $d \mid b$, then $d \mid (a + b)$.
+\item[THM13F:] Given integers $x$ and $y$, 
+           if $d \mid a$ and $d \mid b$, then $d \mid (ax + by)$.
+\end{enumerate}
+
+\newpage
+
+
+\newpage
+
+Here are some questions on GCD.
+
+For the following we will assume that you have access to tables or a 
+computer that can compute only integer quotients and remainders, 
+i.e., that you have access to a Euclidean property machine.
+For instance, if you're given 100 and 23 and you want want to find $q,r$
+such that
+\[
+100 = 23 \cdot q + r, \,\,\, 0 \leq r < 23
+\]
+you can of course compute $q$ and $r$ using C++ like this:
+\begin{Verbatim}[frame=single]
+std::cout << 100 / 23 << ',' << 100 % 23 << '\n';
+\end{Verbatim}
+You can do this in Python:
+\begin{Verbatim}[frame=single]
+print divmod(100, 23)
+\end{Verbatim}
+
+\newpage
+
+Q1. \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] Write down the prime factorization of 123556.
+\item[(b)] Write down the prime factorization of 5436.
+\item[(b)] Compute $\gcd(123556, 5436)$ using the above prime factorizations.
+\end{enumerate}
+
+Here's an example of how you must present your prime factorization:
+\[
+300 = 2^2 \cdot 3^1 \cdot 5^2
+\]
+
+\SOLUTION
+
+\input{q1.tex}
+
+
+\newpage
+
+Q2. 
+Write a list of Euclidean computations to compute the 
+$\gcd(123556, 5436)$.
+The last remainder must be 0.
+
+(If you don't know what I'm talking about, then you have not read
+the notes I gave you. Read it.)
+
+\SOLUTION
+
+\input{q2.tex}
+
+\newpage
+
+
+
+
+Q3.
+Find integers $x$ and $y$ such that 
+\[
+123556x + 5436y = \gcd(123556, 5436)
+\]
+You should begin with labeling all the Euclidean computations
+from Q2 and then perform substitutions.
+Make sure you indicate very clearly which equation you're using.
+Here's a reminder on how to label equations:
+\[
+1 + 1 = 2 \tag{1}
+\]
+
+\SOLUTION
+
+\input{q3.tex}
+
+\newpage
+
+Q4. Show that if you have the following equations:
+\begin{align*}
+c_1 r_0 + d_1 r_1 &= r_3 \tag{1} \\
+c_2 r_0 + d_2 r_1 &= r_4 \tag{2} \\
+r_3 + (-q_4) r_4  &= r_5 \tag{3}
+\end{align*}
+Show that 
+\[
+(c_1 - q_4c_2) r_0 + (d_1 - q_4d_2)r_1 = r_5
+\]
+
+For this question, you need not quote the RING properties/axioms or
+theorems, i.e., just treat this as a \lq\lq normal'' algebra 
+manipulation problem.
+
+\SOLUTION
+
+\input{q4.tex}
+
+\newpage
+Now for the rewrite rules for the congruence notation for modular
+arithmetic:
+
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[CON1:] $a \equiv b \pmod{n}$ 
+\item[CON2:]  $n \mid (a-b)$ can be replaced by $a \equiv b \pmod{n}$
+\end{enumerate}
+
+If $a \equiv b \pmod{n}$ then we say \lq\lq $a$ is congruent to
+$b$ mod $n$''.
+
+\newpage
+
+\setcounter{thm}{13}
+
+\begin{thm} Let $n > 0$ and $a,b,c,d$ be integers.
+\begin{enumerate}[topsep=0in]
+\item[(a)] $a \equiv 0 \pmod{n}$ iff $n \mid a$
+\end{enumerate}
+\end{thm}
+
+This is easy to prove.
+I'll do this one for you quickly.
+If $a \equiv 0 \pmod{n}$, then by definition
+(make sure you check that I'm not lying!), 
+$n$ divides $a - 0$, i.e. $n$ divides $a$.
+And if $n$ divides $a$, then $n$ divides $a - 0$,
+and therefore $a \equiv 0 \pmod{n}$.
+
+You might want to write it out in full.
+Note that I used the fact that $a$ is the same as $a - 0$.
+(Is this true? Are you sure? Don't say I didn't warn you.)
+
+\newpage
+
+\begin{thm} \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] $a \equiv a \pmod{n}$
+\item[(b)] $a \equiv b \pmod{n}$ $\implies$ $b \equiv a \pmod{n}$
+\item[(c)] $a \equiv b \equiv c \pmod{n}$ $\implies$ $a \equiv b \pmod{n}$
+\end{enumerate}
+\end{thm}
+
+These are called (respectively) the reflexive, symmetric, and 
+transitive properties of the congruence relation.
+\lq\lq $a \equiv b \equiv c \pmod{n}$'' means
+\begin{align*}
+a &\equiv b \pmod{n} \\
+b &\equiv c \pmod{n}
+\end{align*}
+
+\newpage
+
+Q5. Prove Theorem 15(c).
+
+\SOLUTION
+
+\input{q5.tex}
+
+\newpage
+
+\begin{thm} Let $n > 0$ and $a,b,c,d$ be integers.
+If
+\begin{align*}
+a &\equiv b \pmod{n} \\
+c &\equiv d \pmod{n}
+\end{align*}
+then
+\[
+a+c \equiv b+d \pmod{n} \\
+\]
+\end{thm}
+
+\newpage 
+
+Q6. Prove Theorem 16.
+
+\SOLUTION
+
+\input{q1.tex}
+\newpage
+
+
+
+\begin{thm}
+Let $n > 0$ and $a,b,c,d$ be integers.
+Prove that if
+\begin{align*}
+a &\equiv b \pmod{n} \\
+c &\equiv d \pmod{n} \\
+\end{align*}
+then
+\[
+ac \equiv bd \pmod{n} \\
+\]
+\end{thm}
+
+
+\newpage
+
+Q7. Prove Theorem 17.
+
+
+\SOLUTION
+\input{q7.tex}
+\newpage
+
+
+Q8. \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)]
+What is the ones digit (or the unit digit) of
+\[
+1^{100} \cdot 2^{100} \cdot 3^{100} \cdot 4^{100} \cdot 5^{100}
+\]
+\item[(b)] What about this one:
+\[
+5^{1000} \cdot 11^{1000} \cdot 13^{1000} \cdot 17^{1000} \cdot 19^{1000}
+\]
+\item[(c)]
+And this:
+\[
+23^{10000} + 29^{10000} + 31^{10000} + 37^{10000} +
+43^{10000}
+\]
+\item[(d)] ... one last one [extra credit]:
+\[
+{{{{{123^{234}}^{345}}^{456}}^{567}}^{678}}^{789}
+\]
+\end{enumerate}
+
+Justify all your work. Writing down the final answer give you a zero.
+Nada. Zilch. 
+I'm looking for a creative using of mathematical facts rather than trying to 
+use a supercomputer to do the number crunching for you.
+
+\SOLUTION
+
+\input{q8.tex}
+
+\end{document}

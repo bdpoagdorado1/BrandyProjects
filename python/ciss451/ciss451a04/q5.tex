@@ -1,0 +1,28 @@
+
+\lq\lq $a \equiv b \equiv c \pmod{n}$ means
+\begin{align*}
+a &\equiv b \pmod{n} \\
+n \mid a-b && \text{by CON1} \\
+nx \equiv a-b && \text{by DIV1} \\
+nx - -b \equiv a && \text{by Thm Brandy1A}\\
+nx + b \equiv a && \text{by THM4A}\\
+\\
+\text{ and } \\
+\\
+b &\equiv c \pmod{n} \\
+n \mid b-c && \text{by CON1} \\
+ny \equiv b-c && \text{by DIV1} \\
+nx - b \equiv -c && \text{by Thm Brandy1B}\\
+\\
+(nx + b) + (ny + -b) \equiv a + (-c) \\
+nx + (b + ny + -b) \equiv a + (-c) && \text{by RING2}\\
+nx + (b + ny) + -b \equiv a + (-c) && \text{by RING3}\\
+nx + (ny + b) + -b \equiv a + (-c) && \text{by RING10}\\
+(nx + ny) + (b + -b) \equiv a + (-c) && \text{by RING2 and RING3}\\
+(nx + ny) + (0) \equiv a + (-c) && \text{by RING8}\\
+(nx + ny) \equiv a + (-c) && \text{by RING4}\\
+n(x + y) \equiv a + (-c) && \text{by RING19}\\
+n(x + y) \equiv a - c && \text{by RING24}\\
+n \mid a - c  && \text{by DIV2}\\
+\THEREFORE a \equiv c \pmod{n}  && \text{by CON2}\\
+\end{align*}

@@ -1,0 +1,64 @@
+
+(a)
+Let $T$ be the task of arranging the 6 people in a row so that the 
+bride is next to the groom.
+Performing $T$ is the same as performing the following in sequence.
+Suppose the bride is $B$ and the groom is $G$ and the rest are
+$X_1, X_2, X_3, X_4$.
+Create a new symbol $BG$.
+\begin{enumerate}[topsep=0in]
+\item[1.] Task $T_1$: Permute the symbols $X_1, X_2, X_3, X_4, BG$
+(There are 5! ways of doing this).
+\item[2.] Task $T_2$: From the permutation from $T_1$,
+replace $BG$ with $B,G$ and $G,B$ to create two permutations. 
+\end{enumerate}
+By the multiplication principle, there are
+\[
+5! 2 = 240
+\]
+possible permutations created.
+
+ANSWER: \boxed{240}
+
+(b) 
+There are altogether $6!$ permutations without any restriction.
+From (a), there are $5!2$ permutations where the bride and groom are next
+to each other. 
+Therefore there are
+\[
+6! - 5!2 = 480
+\]
+permutations where the bride and groom are not next to each other.
+
+ANSWER: \boxed{480}
+
+(c)
+Let $X$ be the set of all permutations.
+Note that $|X| = 6!$.
+Let $A$ be the set of permutations where the bride is to the left of the 
+groom.
+Let $B$ be the set of permutations where the bride is to the right of the 
+groom.
+By the addition principle:
+\[
+|X| = |A| + |B|
+\]
+Now we note that there is an obvious function from $A$ to $B$:
+If you are given a permutation in $A$, by swapping the bride and groom,
+you have a permutation in $B$.
+It is easy to see that the function has an inverse function, i.e., itself.
+and hence it is 1--1 and onto.
+Therefore $|A| = |B|$.
+Hence from $|X| = |A| + |B|$ we have
+\[
+|X| = |A| + |B| = 2|A|
+\]
+Therefore
+\[
+|A| = |X|/2 = 6!/2 = 720/2 = 360
+\]
+Therefore there are 360 permutations where the bride is to the left of the 
+groom.
+
+ANSWER:
+\boxed{360}

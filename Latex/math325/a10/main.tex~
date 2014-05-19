@@ -1,0 +1,206 @@
+\newcommand\COURSENAME{Discrete Math 2}
+\newcommand\COURSESHORTNAME{Discrete Math 2}
+\newcommand\COURSENUMBER{MATH325}
+\newcommand\TITLE{Assignment 10}
+\newcommand\AUTHOR{Dr Yihsiang Liow}
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{assignment}
+\definecolor{red}{rgb}{1,0,0}
+\newcommand\redtext[1]{\textcolor{red}{#1}}
+\begin{document}
+\topmatter
+
+This assignment involves counting solutions
+to linear systems using power series or generating
+functions.
+
+
+The goal is to study the number of solutions to the following system:
+\[
+\begin{cases}
+a + b + c = n \\
+a,b,c \in \Z \\
+0 \leq a, 2 \leq b, 0 < c, c \text{ odd}
+\end{cases}
+\]
+for different values of $n \geq 0$.
+Let $a_n$ be the number of solutions to the above system.
+For instance $a_{1000}$ is the number of solutions to the above when 
+$n$ is $1000$.
+
+To be more specific, $a_0$ is the number of solutions to
+\[
+\begin{cases}
+a + b + c = 0 \\
+a,b,c \in \Z \\
+0 \leq a, 2 \leq b, 0 < c, c \text{ odd}
+\end{cases}
+\]
+In this case, we can compute the value of $a_0$ quickly: $a_0 = 0$.
+In fact, since $b \geq 2$ and $c \geq 1$, if $a + b + c  = n$ has a solution,
+then $a + b + c \geq 3$.
+We conclude immediately that
+\[
+a_0 = a_1 = a_2 = 0
+\]
+Clearly $a_3 = 1$ since the only solution to 
+\[
+\begin{cases}
+a + b + c = 0 \\
+a,b,c \in \Z \\
+0 \leq a, 2 \leq b, 0 < c, c \text{ odd}
+\end{cases}
+\]
+is
+\[
+a = 0, b = 2, c = 1
+\]
+It's easy to see that $a_4 = 2$:
+\[
+4 = 1 + 2 + 1 = 0 + 3 + 1
+\]
+
+Before going on, you should compute $a_5$ and $a_6$ to get a feel for the 
+problem.
+(You can either do this by hand or write a program to this.)
+The values of $a_n$ for $n = 0, 1, 2, \ldots, 6$ is useful for checking
+against the general result that you will be deriving.
+
+Let $f(x) = \sum_{n=0}^\infty a_n x^n$.
+
+You will see that we do not need to guess a formula for $a_n$
+and then prove by mathematical induction.
+Instead we will use the method of power series to compute a formula
+for $a_n$.
+
+\newpage
+Q1. Write down $f(x)$, 
+the product of 3 power series such that the coefficient of 
+$x^n$ of this product is $a_n$. 
+You need not simplify. 
+For instance the following is a product of power series (which is not
+the answer to this question!)
+\[
+(2 + 2x + 2x^2 + \cdots)
+(0 + 1x + 2x^2 + \cdots)
+(1 + 2x + 3x^2 + \cdots)
+\]
+You should write down explicitly at least 3 nonzero terms for each power 
+series.
+
+\SOLUTION
+
+\input{q01.tex}
+
+\newpage
+
+Q2 Rewrite the product of power series in (a) as a rational function.
+The denominator should be factorized
+(for instance $(1 - x^2) = (1 - x)(1 + x)$), 
+with similar terms collected together.
+For instance the following is a rational function 
+(which is not the right answer to this question!)
+\[
+f(x) = \frac{x}{(2 - 3x)^3(1 + 5x)^6}
+\]
+Note that all the $(1 + 5x)$ factors (there are 6 of them) 
+are collected together.
+Do {\it not} write for instance
+\[
+f(x) = \frac{x}{(2 - 3x)^3(1 + 5x)^2(1 + 5x)^4}
+\]
+
+\SOLUTION
+
+
+\input{q02.tex}
+
+
+
+
+\newpage
+Q3.
+Using the theory of partial fractions,
+rewrite the rational expression as a linear sum of simpler rational functions 
+of the form $\frac{1}{p(x)^k}$ where $p(x)$ is a polynomial of degree
+at most 2. 
+For instance the following is a linear sum of such rational functions:
+\[
+f(x) = 5 \frac{1}{(1 - x)^3} + \frac{3}{4} \frac{1}{(2 + x + 3x^2)^5}
+\]
+(of course this is not the answer!)
+
+[Hint: For this problem, the $p(x)$'s are in fact linear, i.e. degree $1$.
+Also, there are 4 terms in this sum.]
+
+\SOLUTION
+
+\input{q03.tex}
+
+
+
+
+\newpage
+Q4.
+Using Q3, rewrite $f(x)$ as a power series with the coefficient of $x^n$
+in terms of $n$.
+The following is an example (which is of course not the right answer!)
+\[
+f(x) = \sum_{n=0}^\infty \frac{2 + n^2}{1 + n} x^n
+\]
+
+\SOLUTION
+
+\input{q04.tex}
+
+
+
+
+\newpage
+Q5. 
+What is the coefficient $x^n$ from Q4 in terms of $n$
+Recall that the coefficient of $x^n$ for the power series of
+$f(x)$ is $a_n$.
+In other words what is the formula for $a_n$ in terms of $n$?
+
+[It's a good idea now to check the formula against the values of
+$a_n$ for $n = 0, 1, 2, \ldots, 6$ that you have computed earlier.]
+
+\SOLUTION
+
+\input{q05.tex}
+
+
+
+\newpage
+Q6.
+(a) How many solutions are there to
+\[
+\begin{cases}
+a + b + c = 1000 \\
+a,b,c \in \Z \\
+0 \leq a, 2 \leq b, 0 < c, c \text{ odd}
+\end{cases}
+\]
+
+(b)
+How many solutions are there to
+\[
+\begin{cases}
+a + b + c = 1001 \\
+a,b,c \in \Z \\
+0 \leq a, 2 \leq b, 0 < c, c \text{ odd}
+\end{cases}
+\]
+
+
+\SOLUTION
+
+\input{q06.tex}
+
+
+
+
+	
+\end{document}

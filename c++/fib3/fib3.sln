@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fib3", "fib3\fib3.vcproj", "{018A2170-2E0A-46D9-9DD5-10C1A5D9AD75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{018A2170-2E0A-46D9-9DD5-10C1A5D9AD75}.Debug|Win32.ActiveCfg = Debug|Win32
+		{018A2170-2E0A-46D9-9DD5-10C1A5D9AD75}.Debug|Win32.Build.0 = Debug|Win32
+		{018A2170-2E0A-46D9-9DD5-10C1A5D9AD75}.Release|Win32.ActiveCfg = Release|Win32
+		{018A2170-2E0A-46D9-9DD5-10C1A5D9AD75}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

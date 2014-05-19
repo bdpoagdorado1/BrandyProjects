@@ -1,0 +1,24 @@
+
+
+From $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$ we have:
+
+\begin{align*}
+n \mid (a-b) && \text{by CON1} \\
+\text{ and } \\
+n \mid (c-d) && \text{by CON1} \\
+nx \equiv (a-b) && \text{by DIV1} \\
+\text{ and } \\
+ny \equiv (c-d) && \text{by DIV1} \\
+nx + ny \equiv (a-b) + (c-d) \\
+\THEREFORE n(x + y) \equiv (a-b) + (c-d) && \text{by RING19} \\
+\THEREFORE n(x + y) \equiv (a + (-b)) + (c + (-d)) && \text{by RING24} \\
+\THEREFORE n(x + y) \equiv a + (-b + (c + -d)) && \text{by RING2} \\
+\THEREFORE n(x + y) \equiv a + ((-b + c) + -d) && \text{by RING3} \\
+\THEREFORE n(x + y) \equiv a + ((c + -b) + -d) && \text{by RING10} \\
+\THEREFORE n(x + y) \equiv a + (c + (-b + -d)) && \text{by RING2} \\
+\THEREFORE n(x + y) \equiv (a + c) + (-b + -d) && \text{by RING3} \\
+\THEREFORE n(x + y) \equiv (a+c) + (-b-d) && \text{by RING25} \\
+\THEREFORE n(x + y) \equiv (a+c) - (b+d) && \text{by RING24} \\
+\THEREFORE n \mid (a+c) - (b+d)  && \text{ by DIV2}\\
+\THEREFORE a+c \equiv b+d  && \text{by CON2}
+\end{align*}
